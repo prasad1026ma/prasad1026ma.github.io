@@ -10,7 +10,6 @@ iris.then(function(data) {
     });
 
     // Define the dimensions and margins for the SVG
-    
     const width = 600,
         height = 400;
 
@@ -23,7 +22,7 @@ iris.then(function(data) {
     
 
     // Create the SVG container
-    const svg = d3.select("body")
+    const svg = d3.select("scatterplot")
                 .append("svg")
                 .attr("width", width)
                 .attr("height", height)
@@ -123,7 +122,7 @@ iris.then(function(data) {
     };
 
     // Create the SVG container
-    const svg = d3.select("body")
+    const svg = d3.select("boxplot")
                 .append("svg")
                 .attr("width", width)
                 .attr("height", height)
@@ -148,8 +147,7 @@ iris.then(function(data) {
 
     const yAxis = svg.append('g')
     .call(d3.axisLeft(yScale))
-    .attr('transform', `translate(${margin.left}, 0)`); // Correct position of Y-axis
-
+    .attr('transform', `translate(${margin.left}, 0)`); 
 
     // Add x-axis label
     svg.append('text')
@@ -175,11 +173,11 @@ iris.then(function(data) {
         return {q1, median, q3};
     };
 
-    //
+    // applys the rollup function to each individual species
     const quartilesBySpecies = d3.rollup(data, rollupFunction, d => d.Species);
 
 
-    // iterates over every species to draw
+    // iterates over every species to draw out the IQR values, box values, and species name
     quartilesBySpecies.forEach((quartiles, Species) => {
         const x = xScale(Species);
         const boxWidth = xScale.bandwidth();
@@ -188,15 +186,6 @@ iris.then(function(data) {
         // Calculate the y-values using yScale
         const lowEnd = Math.max(yScale.domain()[0], quartiles.q1 - 1.5 * iqr);
         const upperEnd = Math.min(yScale.domain()[1], quartiles.q3 + 1.5 * iqr);
-        console.log('Q1:', quartiles.q1, 'Q3:', quartiles.q3, 'Median:', quartiles.median);
-        console.log('lowEnd:', lowEnd, 'upperEnd:', upperEnd);
-
-
-        console.log('boxWidth:', boxWidth);
-        console.log('y1',yScale(lowEnd) )
-        console.log('y2', yScale(upperEnd))
-        console.log('x', xScale(Species))
-
 
         // Draw vertical lines
         svg.append("line")
