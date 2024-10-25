@@ -1,0 +1,17 @@
+Github Page Link: https://prasad1026ma.github.io/index.html
+
+I first used a custom font from Google Fonts, giving it a unique and stylish appearance and set the body text is set to the cursive
+'Arima' font, enhancing the overall aesthetic. A light background color (#f8f9fa) is applied to the bofy section for a clean look.
+Text Color: The default text color is set to a dark gray (#333), ensuring readability against the light background. The header includes 
+a dark green background (#004d00), providing a strong visual element while the header text is set to white for contrast against the dark background.
+The header includes padding for spacing, making it visually appealing.
+In the above navigation menu it removes default list styles and ensure the links display inline. The navigation links are white, 
+maintaining consistency with the header and the links changed to underlined when hovered over. In the main body section
+there is a maximum width of 800px and is centered on the page. It includes padding and a white background to separate it from the body background.
+Rounded corners and a subtle box shadow give the main area a card-like appearance. Additionally the headings (h1 and h2) are set to white to maintain
+visual consistency with the header and footer, although their visibility will depend on the background they are placed on.
+Unordered lists have a left padding to indent list items, improving readability.
+The footer shares the same dark green background as the header, with white text for uniformity and the links are set to a light color (#f8f9fa), 
+ensuring they are visible against the dark footer background. Images within the site are set to have a maximum width of 100% and automatic height adjustment, 
+ensuring they are responsive and fit within their containers. Moreover, a class is provided to center-align images, ensuring they are visually appealing within the layout.
+Overall, The body has a margin of 15px and padding of 20px, preventing text from touching the sides of the screen and creating a comfortable reading experience.
